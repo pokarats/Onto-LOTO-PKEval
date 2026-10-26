@@ -2,7 +2,8 @@
 
 This repository contains the research implementation (**public-data-only**) for the paper:
 *Ontology-Guided Procedural Knowledge Extraction and Validation: Case Study on
-the Lockout-Tagout Documents*.
+the Lockout-Tagout Documents* (https://aclanthology.org/2026.docinsights-1.16/).
+
 
 **Release 0.2.0 — runnable stages, not a recovery of the original results.**
 The original prompt set, expert-authored safety ontology, annotated figure
