@@ -216,3 +216,26 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+
+# Research inputs, model outputs, and caches must be managed separately.
+data/
+outputs/
+cache/
+models/
+*.gguf
+*.safetensors
+
+# File names are not enough to establish redistribution rights.
+*.pdf
+*.jpg
+*.jpeg
+*.png
+*.webp

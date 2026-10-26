@@ -1,0 +1,32 @@
+{
+  "schema_version": "loto-safety-rules-0.1",
+  "name": "Exploratory LOTO keyword rules",
+  "expert_verified": false,
+  "intended_use": "Research triage only; never a safety or regulatory compliance decision",
+  "energy_types": {
+    "electrical": ["electrical", "voltage", "volt", "disconnect", "circuit", "breaker"],
+    "pneumatic": ["pneumatic", "compressed air", "air supply", "air line"],
+    "hydraulic": ["hydraulic", "hydraulic fluid"],
+    "mechanical": ["kinetic", "rotating", "flywheel", "moving parts", "spring"],
+    "thermal": ["thermal", "steam", "hot water", "heat"],
+    "water_pressure": ["water", "valve", "water inlet", "water outlet", "water pressure"]
+  },
+  "action_categories": {
+    "notify": ["notify", "inform affected", "alert personnel"],
+    "stop": ["shut down", "machine stop", "stop the machine", "turn off", "stop button"],
+    "isolate": ["isolate", "disconnect", "close valve", "closed position", "off position"],
+    "lockout": ["lock out", "lockout", "padlock", "lock and tag", "tagout"],
+    "dissipate": ["bleed", "release pressure", "dissipate", "zero pressure", "discharge"],
+    "verify": ["verify", "attempt to restart", "try to start", "visually check", "test for voltage"],
+    "restore": ["remove lock", "restore", "reenergize", "re-energize"]
+  },
+  "required_categories": ["stop", "isolate", "lockout", "verify"],
+  "ordered_pairs": [["stop", "isolate"], ["isolate", "lockout"], ["lockout", "verify"]],
+  "target_checks": [
+    {
+      "energy_type": "electrical",
+      "incompatible_if_only_energy_type": true,
+      "unexpected_target_terms": ["water valve", "air valve", "hydraulic valve"]
+    }
+  ]
+}
